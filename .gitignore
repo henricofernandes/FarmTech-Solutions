@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+
+# Editores
+.vscode/
+.idea/
+
+# Windows / OneDrive
+Thumbs.db
+desktop.ini
+*.tmp
+
+# Pacote de entrega gerado localmente
+*.zip
