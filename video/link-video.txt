@@ -1,0 +1,10 @@
+FarmTech Solutions - Fase 1
+Vídeo de demonstração
+
+Link do vídeo no YouTube (marcado como "não listado"):
+COLE_O_LINK_AQUI
+
+O vídeo tem até 5 minutos e mostra o funcionamento completo das aplicações:
+- Python: python/farmtech.py (menu, cadastro, atualização e deleção)
+- R: r/estatisticas.R (média e desvio padrão)
+- R: r/clima.R (consulta à API meteorológica Open-Meteo)
