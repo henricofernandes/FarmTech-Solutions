@@ -1,0 +1,2 @@
+#  link do vídeo no Youtube. Além disso, grave um vídeo simples, de até 5 minutos, usando o seu celular ou um gravador de tela simples (por exemplo, streamyard.com) mostrando a sua tela do computador, comprovando o funcionamento completo da sua aplicação Python e R. Poste o seu vídeo no YouTube, marque como “não listado” 
+#  link do video:
