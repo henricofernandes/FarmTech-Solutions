@@ -9,7 +9,8 @@ uma API meteorológica pública.
 
 | Nome | RM |
 |---|---|
-| Henrico Fernandes | PREENCHER_RM |
+| Henrico Fernandes | rm575348 |
+| PREENCHER_NOME | PREENCHER_RM |
 | PREENCHER_NOME | PREENCHER_RM |
 | PREENCHER_NOME | PREENCHER_RM |
 | PREENCHER_NOME | PREENCHER_RM |
