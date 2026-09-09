@@ -18,6 +18,23 @@ cabeçalho:
 
 ![Interface com o clima no cabeçalho](docs/imagens/interface.png)
 
+## Baixar e abrir, sem instalar nada
+
+Para só abrir e usar, sem Python e sem terminal:
+
+**[⬇ Baixar o FarmTech.exe](https://github.com/henricofernandes/FarmTech-Solutions/releases/latest/download/FarmTech.exe)**
+
+O link baixa um programa único de cerca de 10 MB. Dê dois cliques nele e a janela abre.
+Na primeira execução ele cria as pastas `dados/` e `r/` ao lado de si mesmo, e é lá que
+os cadastros ficam guardados.
+
+Como o programa não tem assinatura digital, o Windows costuma mostrar o aviso
+**"O Windows protegeu o computador"**: clique em **Mais informações** e em **Executar
+assim mesmo**. As análises em R precisam do R instalado na máquina; sem ele o cadastro e
+os cálculos funcionam normalmente e a própria interface avisa.
+
+Como esse executável é gerado está em `deploy/exe/README.md`.
+
 ## Rodar no navegador, sem instalar nada
 
 Dá para executar o projeto inteiro pelo GitHub Codespaces, sem baixar o repositório e

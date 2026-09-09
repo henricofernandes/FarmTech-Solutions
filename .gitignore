@@ -20,3 +20,10 @@ desktop.ini
 
 # Pacote de entrega gerado localmente
 *.zip
+
+# Build do executável: o binário vai para a Release, não para o repositório
+*.exe
+*.spec
+.venv-exe/
+build/
+dist/
