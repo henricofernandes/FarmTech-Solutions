@@ -1,0 +1,223 @@
+/* Mesma paleta e mesmos pesos de fonte usados no interface.py. */
+:root {
+  --fundo: #eef2ee;
+  --verde: #1d6b38;
+  --verde-escuro: #14512c;
+  --verde-medio: #2f8b4c;
+  --verde-claro: #7fbe90;
+  --verde-suave: #e6f0e8;
+  --verde-zebra: #f4f9f5;
+  --verde-borda: #c5dbca;
+  --branco: #ffffff;
+  --texto: #1f2b22;
+  --texto-suave: #5d6f62;
+  --console-fundo: #12241a;
+  --console-texto: #d5ecda;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font: 15px/1.45 "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+/* ---------- cabeçalho ---------- */
+
+.topo {
+  background: var(--verde-escuro);
+  border-bottom: 3px solid var(--verde-medio);
+  color: var(--branco);
+  padding: 14px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.topo-titulo { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; }
+.topo h1 { margin: 0; font-size: 25px; letter-spacing: .2px; }
+.topo p { margin: 0; font-size: 13px; color: #bcdcc4; }
+
+.topo-canto { display: flex; flex-direction: column; text-align: right; font-size: 13px; }
+#rotulo-cidade { color: #cfe6d5; font-weight: 600; }
+#rotulo-clima { color: var(--verde-claro); }
+
+/* ---------- estrutura ---------- */
+
+.corpo {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding: 16px;
+  align-items: start;
+}
+
+.coluna-direita { display: grid; gap: 16px; }
+
+/* No computador, formulário à esquerda e o resto à direita, como na janela. */
+@media (min-width: 980px) {
+  .corpo { grid-template-columns: 290px 1fr; }
+}
+
+.painel {
+  background: var(--branco);
+  border: 1px solid var(--verde-borda);
+  border-radius: 10px;
+  padding: 14px 16px 16px;
+}
+
+.painel h2 {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--verde);
+}
+
+hr { border: none; border-top: 1px solid var(--verde-borda); margin: 14px 0 12px; }
+
+/* ---------- formulário ---------- */
+
+.culturas { border: none; margin: 0; padding: 0; }
+.culturas legend { padding: 0; font-size: 13px; font-weight: 600; color: var(--verde); }
+.culturas label { margin-right: 18px; font-size: 15px; }
+.culturas input { accent-color: var(--verde); }
+
+.dica { margin: 4px 0 12px; font-size: 13px; color: var(--texto-suave); }
+
+.campo { display: block; font-size: 13px; font-weight: 600; color: var(--verde); }
+.campo input {
+  display: block;
+  width: 100%;
+  margin: 4px 0 10px;
+  padding: 9px 10px;
+  font: inherit;
+  color: var(--texto);
+  background: var(--branco);
+  border: 1px solid var(--verde-borda);
+  border-radius: 7px;
+}
+.campo input:focus, .inline input:focus {
+  outline: none;
+  border-color: var(--verde-medio);
+  box-shadow: 0 0 0 3px rgba(47, 139, 76, .18);
+}
+
+.previa { display: flex; justify-content: space-between; gap: 12px; padding: 3px 0; font-size: 14px; }
+.previa strong { color: var(--verde); font-variant-numeric: tabular-nums; }
+
+.talhao { display: flex; justify-content: center; margin: 12px 0 14px; }
+#desenho {
+  width: 190px;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--verde-borda);
+  border-radius: 6px;
+  background: var(--branco);
+}
+
+/* ---------- botões ---------- */
+
+.botao {
+  display: block;
+  width: 100%;
+  margin-bottom: 7px;
+  padding: 10px 14px;
+  font: inherit;
+  color: var(--verde-escuro);
+  background: var(--verde-suave);
+  border: 1px solid var(--verde-borda);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.botao:hover { background: #d9e9dd; }
+.botao:active { transform: translateY(1px); }
+
+.botao.principal {
+  color: var(--branco);
+  background: var(--verde);
+  border-color: var(--verde);
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(20, 81, 44, .3);
+}
+.botao.principal:hover { background: var(--verde-medio); }
+
+.acoes { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 12px; }
+.acoes .botao { width: auto; margin: 0; }
+
+.inline { font-size: 13px; font-weight: 600; color: var(--verde); display: flex; align-items: center; gap: 6px; }
+.inline input {
+  width: 160px;
+  padding: 9px 10px;
+  font: inherit;
+  color: var(--texto);
+  border: 1px solid var(--verde-borda);
+  border-radius: 7px;
+}
+
+/* ---------- tabela ---------- */
+
+.rolagem { overflow-x: auto; border: 1px solid var(--verde-borda); border-radius: 8px; }
+
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+
+thead th {
+  position: sticky;
+  top: 0;
+  background: var(--verde);
+  color: var(--branco);
+  font-weight: 600;
+  text-align: left;
+  padding: 9px 10px;
+  white-space: nowrap;
+}
+
+tbody td { padding: 8px 10px; border-top: 1px solid #e8f1ea; white-space: nowrap; }
+tbody tr:nth-child(odd) { background: var(--branco); }
+tbody tr:nth-child(even) { background: var(--verde-zebra); }
+
+tbody tr.escolhida, tbody tr.escolhida:nth-child(even) {
+  background: var(--verde-medio);
+  color: var(--branco);
+}
+
+.num { text-align: right; font-variant-numeric: tabular-nums; }
+tbody tr { cursor: pointer; }
+
+/* ---------- console ---------- */
+
+.console {
+  margin: 12px 0 0;
+  padding: 12px 14px;
+  min-height: 190px;
+  max-height: 340px;
+  overflow: auto;
+  background: var(--console-fundo);
+  color: var(--console-texto);
+  border-radius: 8px;
+  font: 12.5px/1.5 Consolas, "Courier New", monospace;
+  white-space: pre;
+}
+
+/* ---------- rodapé ---------- */
+
+.rodape {
+  background: var(--verde-suave);
+  border-top: 1px solid var(--verde-borda);
+  padding: 9px 20px;
+  font-size: 13px;
+  color: var(--texto-suave);
+}
+
+.aviso {
+  margin: 0;
+  padding: 14px 20px 26px;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--texto-suave);
+}
+.aviso a { color: var(--verde); }
+.aviso code { font-size: 12px; }

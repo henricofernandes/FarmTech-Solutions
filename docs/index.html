@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FarmTech Solutions — Agricultura Digital</title>
+<meta name="description" content="Demonstração da interface do FarmTech Solutions: cadastro de talhões, cálculo de insumos e análises.">
+<link rel="stylesheet" href="demo/estilo.css">
+</head>
+<body>
+
+<header class="topo">
+  <div class="topo-titulo">
+    <h1>FarmTech Solutions</h1>
+    <p>cadastro de talhões, cálculo de insumos e análises</p>
+  </div>
+  <div class="topo-canto">
+    <span id="rotulo-cidade">Cidade dos próximos cadastros: Sorriso - MT</span>
+    <span id="rotulo-clima"></span>
+  </div>
+</header>
+
+<main class="corpo">
+
+  <section class="painel" aria-labelledby="t-form">
+    <h2 id="t-form">Talhão quadrado</h2>
+
+    <fieldset class="culturas">
+      <legend>Cultura</legend>
+      <label><input type="radio" name="cultura" value="Soja" checked> Soja</label>
+      <label><input type="radio" name="cultura" value="Milho"> Milho</label>
+    </fieldset>
+    <p class="dica" id="manejo">Manejo: Fosfato líquido</p>
+
+    <label class="campo" for="lado">Lado do talhão (metros)
+      <input type="number" id="lado" inputmode="decimal" step="any" min="0">
+    </label>
+    <label class="campo" for="ruas">Quantidade de ruas
+      <input type="number" id="ruas" inputmode="numeric" step="1" min="0">
+    </label>
+    <label class="campo" for="dose">Dose do insumo (mL por metro)
+      <input type="number" id="dose" inputmode="decimal" step="any" min="0">
+    </label>
+
+    <hr>
+
+    <div class="previa">
+      <span>Área calculada</span><strong id="previa-area">—</strong>
+    </div>
+    <div class="previa">
+      <span>Total de insumo</span><strong id="previa-insumo">—</strong>
+    </div>
+
+    <div class="talhao">
+      <svg id="desenho" viewBox="0 0 190 190" role="img"
+           aria-label="Representação do talhão e das ruas"></svg>
+    </div>
+
+    <button type="button" id="btn-cadastrar" class="botao principal">Cadastrar talhão</button>
+    <button type="button" id="btn-atualizar" class="botao">Atualizar selecionado</button>
+    <button type="button" id="btn-limpar" class="botao">Limpar campos</button>
+  </section>
+
+  <div class="coluna-direita">
+
+    <section class="painel" aria-labelledby="t-tabela">
+      <h2 id="t-tabela">Registros dos vetores</h2>
+      <div class="rolagem">
+        <table id="tabela">
+          <thead>
+            <tr>
+              <th class="num">Pos.</th>
+              <th>Cidade</th>
+              <th>Cultura</th>
+              <th>Manejo</th>
+              <th class="num">Lado (m)</th>
+              <th class="num">Ruas</th>
+              <th class="num">Dose (mL/m)</th>
+              <th class="num">Área (m²)</th>
+              <th class="num">Insumo (L)</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="acoes">
+        <button type="button" id="btn-editar" class="botao">Editar no formulário</button>
+        <button type="button" id="btn-deletar" class="botao">Deletar selecionado</button>
+        <button type="button" id="btn-recarregar" class="botao">Recarregar do CSV</button>
+      </div>
+    </section>
+
+    <section class="painel" aria-labelledby="t-analises">
+      <h2 id="t-analises">Análises</h2>
+      <div class="acoes">
+        <button type="button" id="btn-estatisticas" class="botao">Média e desvio padrão</button>
+        <label class="inline" for="cidade">Cidade:
+          <input type="text" id="cidade" value="Sorriso - MT" autocomplete="off">
+        </label>
+        <button type="button" id="btn-clima" class="botao">Consultar clima</button>
+      </div>
+      <pre id="saida" class="console" aria-live="polite"></pre>
+    </section>
+
+  </div>
+</main>
+
+<footer class="rodape">
+  <span id="status">Carregando os dados do repositório...</span>
+</footer>
+
+<p class="aviso">
+  Esta página é uma <strong>demonstração</strong> da interface, feita para abrir no
+  celular. O trabalho em si são as aplicações em <strong>Python</strong> e em
+  <strong>R</strong>: navegador não executa nenhuma das duas, então aqui os cálculos e
+  as estatísticas foram reescritos em JavaScript, reproduzindo as mesmas fórmulas e o
+  mesmo formato de saída. A consulta de clima usa a mesma API Open-Meteo do
+  <code>clima.R</code>. Os talhões vêm do CSV real do repositório, e o que você cadastrar
+  aqui não é salvo.
+  <a href="https://github.com/henricofernandes/FarmTech-Solutions">Ver o projeto completo</a>
+</p>
+
+<script src="demo/app.js"></script>
+</body>
+</html>

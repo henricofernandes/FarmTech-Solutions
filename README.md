@@ -18,6 +18,22 @@ cabeçalho:
 
 ![Interface com o clima no cabeçalho](docs/imagens/interface.png)
 
+## Abrir no navegador ou no celular
+
+**[▶ Abrir a demonstração](https://henricofernandes.github.io/FarmTech-Solutions/)**
+
+Abre na hora, sem baixar nada e sem instalar nada, no computador ou no celular. Dá para
+cadastrar talhão, ver a área e o insumo sendo calculados, e consultar as estatísticas e
+o clima.
+
+É uma **demonstração da interface**, não a aplicação em si: navegador não executa Python
+nem R, então as fórmulas e o cálculo de média e desvio padrão foram reescritos em
+JavaScript, reproduzindo exatamente os mesmos números e o mesmo formato de saída do
+`estatisticas.R`. O clima usa a mesma API Open-Meteo do `clima.R`. Os talhões são lidos
+do CSV real deste repositório, e o que for cadastrado na página não é salvo.
+
+O código dela está em `docs/index.html` e `docs/demo/`.
+
 ## Baixar e abrir, sem instalar nada
 
 Para só abrir e usar, sem Python e sem terminal:
