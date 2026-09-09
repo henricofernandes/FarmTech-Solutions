@@ -3,6 +3,10 @@
 Programa de terminal que cadastra talhões quadrados, calcula área e insumo, e mantém
 os dados em vetores espelhados num arquivo CSV.
 
+Tudo o que está descrito aqui é a lógica do projeto, e é ela que a interface visual
+reaproveita sem duplicar nada. Se você procura a janela, veja
+[docs/interface.md](interface.md).
+
 ## Menu principal
 
 ```

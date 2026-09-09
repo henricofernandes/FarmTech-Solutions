@@ -5,6 +5,16 @@ soja e milho, calcula a área plantada e o insumo necessário, e grava tudo em C
 aplicações em **R** consomem esses dados: uma calcula estatísticas e a outra consulta
 uma API meteorológica pública.
 
+A mesma lógica também pode ser usada por uma **interface visual em Tkinter**, uma camada
+adicional que não substitui nem altera o menu de terminal.
+
+![Interface visual do FarmTech Solutions](docs/imagens/interface.png)
+
+Acima, a interface com o clima de Sorriso - MT consultado pelo `clima.R` e exibido no
+cabeçalho. Abaixo, o mesmo painel mostrando a saída do `estatisticas.R`:
+
+![Estatísticas calculadas pelo R](docs/imagens/estatisticas.png)
+
 ## Integrantes do grupo
 
 | Nome | RM |
@@ -20,6 +30,7 @@ uma API meteorológica pública.
 ```
 FarmTech-Solutions/
 ├── python/farmtech.py               aplicação principal (menu, vetores, cálculos, CSV)
+├── python/interface.py              interface visual em Tkinter sobre a mesma lógica
 ├── r/estatisticas.R                 média e desvio padrão a partir do CSV
 ├── r/clima.R                        clima em tempo real pela API Open-Meteo
 ├── dados/dados_agricultura.csv      registros gerados pelo Python
@@ -33,7 +44,7 @@ FarmTech-Solutions/
 
 | Ferramenta | Uso | Observação |
 |---|---|---|
-| Python 3 | aplicação principal | só biblioteca padrão (`csv`, `pathlib`, `shutil`, `subprocess`, `sys`) |
+| Python 3 | aplicação principal e interface | só biblioteca padrão (`csv`, `pathlib`, `shutil`, `subprocess`, `sys`, `threading`, `tkinter`) |
 | R | estatísticas e clima | necessário para as opções de análise |
 | Pacote `jsonlite` | ler o JSON da API | instale com `install.packages("jsonlite")` |
 
@@ -42,7 +53,8 @@ FarmTech-Solutions/
 Abra o terminal na pasta do projeto.
 
 ```powershell
-python python/farmtech.py     # aplicação principal
+python python/farmtech.py     # aplicação principal (menu de terminal)
+python python/interface.py    # a mesma aplicação em janela
 Rscript r/estatisticas.R      # média e desvio padrão dos talhões
 Rscript r/clima.R             # clima do local padrão (Sorriso - MT)
 Rscript r/clima.R Rio Verde   # clima de outra cidade
@@ -75,11 +87,18 @@ externo: a opção 2 roda o `estatisticas.R` logo depois de listar os registros,
 opção 5 roda o `clima.R` passando a cidade como argumento. O cálculo estatístico e o
 acesso à internet acontecem sempre do lado do R.
 
+A interface visual entra nesse fluxo como um segundo cliente da mesma lógica: ela importa
+o `farmtech.py`, mexe nos mesmos vetores, grava pelo mesmo `salvar_csv()` e chama os
+mesmos scripts em R, só exibindo o resultado em janela em vez de terminal. Por isso não
+convém abrir as duas ao mesmo tempo — cada uma reescreve o CSV inteiro a partir da sua
+memória, e a última a salvar venceria.
+
 ## Documentação detalhada
 
 | Documento | Conteúdo |
 |---|---|
 | [docs/python.md](docs/python.md) | menu, vetores, cálculos, validações e persistência |
+| [docs/interface.md](docs/interface.md) | a interface visual e como ela reaproveita o `farmtech.py` |
 | [docs/r.md](docs/r.md) | os dois scripts em R, estatísticas e API meteorológica |
 | [docs/dados.md](docs/dados.md) | formato dos arquivos CSV e regras dos dados |
 
@@ -87,12 +106,11 @@ acesso à internet acontecem sempre do lado do R.
 
 Atendidos: duas culturas (soja e milho), cálculo de área, manejo de insumos, dados em
 vetores, menu com entrada, saída, atualização por posição, deleção e sair, rotinas de
-loop e decisão, estatísticas em R, e o "ir além" com a API meteorológica pelo R.
+loop e decisão, estatísticas em R, e o "ir além" com a API meteorológica pelo R. Como
+extra, a interface visual em Tkinter expõe todas essas operações em janela.
 
-Pendentes: publicar no GitHub — o versionamento local já está feito, falta criar o
-repositório remoto e enviar os commits; escrever o resumo de Formação Social, já que o
-artigo está escolhido em `formacao-social/link-artigo.txt` mas o `resumo-artigo.pdf`
-ainda não existe; e gravar o vídeo, cujo link continua em branco no
-`video/link-video.txt`. Há também um ponto em aberto no cálculo de área — as duas
+Pendentes: escrever o resumo de Formação Social, já que o artigo está escolhido em
+`formacao-social/link-artigo.txt` mas o `resumo-artigo.pdf` ainda não existe; e gravar o
+vídeo, cujo link continua em branco no `video/link-video.txt`. Há também um ponto em aberto no cálculo de área — as duas
 culturas usam a mesma figura geométrica (quadrado), e o enunciado pode estar pedindo
 uma figura diferente para cada cultura.
