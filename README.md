@@ -8,12 +8,15 @@ uma API meteorológica pública.
 A mesma lógica também pode ser usada por uma **interface visual em Tkinter**, uma camada
 adicional que não substitui nem altera o menu de terminal.
 
-![Interface visual do FarmTech Solutions](docs/imagens/interface.png)
+![Interface visual em funcionamento](docs/imagens/demo.gif)
 
-Acima, a interface com o clima de Sorriso - MT consultado pelo `clima.R` e exibido no
-cabeçalho. Abaixo, o mesmo painel mostrando a saída do `estatisticas.R`:
+Acima, a interface em uso: o talhão sendo digitado com a área e o insumo calculados a
+cada tecla, o cadastro entrando na tabela, e as estatísticas vindas do `estatisticas.R`.
 
-![Estatísticas calculadas pelo R](docs/imagens/estatisticas.png)
+Abaixo, a mesma tela com o clima de Sorriso - MT consultado pelo `clima.R` e exibido no
+cabeçalho:
+
+![Interface com o clima no cabeçalho](docs/imagens/interface.png)
 
 ## Integrantes do grupo
 

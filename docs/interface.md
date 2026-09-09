@@ -36,7 +36,7 @@ módulo e chama as funções dele.
 
 ## A janela
 
-![Interface visual do FarmTech Solutions](imagens/interface.png)
+![Interface visual em funcionamento](imagens/demo.gif)
 
 Quatro áreas em uma tela só:
 
@@ -59,6 +59,8 @@ linha joga os valores dela no formulário.
 
 **Painel de análises em R** — os botões de estatísticas e de clima, com a saída do R
 impressa dentro da janela.
+
+![Estatísticas calculadas pelo R](imagens/estatisticas.png)
 
 ## Decisões de implementação
 
