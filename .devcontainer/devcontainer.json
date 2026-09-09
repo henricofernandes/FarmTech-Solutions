@@ -1,0 +1,43 @@
+{
+  "name": "FarmTech Solutions",
+  "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+
+  // Ambiente grafico leve com noVNC, para a janela do Tkinter aparecer
+  // dentro do navegador. Sem ele o Codespaces nao tem tela para desenhar.
+  "features": {
+    "ghcr.io/devcontainers/features/desktop-lite:1": {
+      "password": "farmtech",
+      "webPort": "6080",
+      "vncPort": "5901"
+    }
+  },
+
+  "containerEnv": {
+    // O R imprime na codificacao do locale; sem UTF-8 os acentos da saida
+    // de clima.R e estatisticas.R chegariam quebrados na interface.
+    "LANG": "C.UTF-8",
+    "LC_ALL": "C.UTF-8",
+    // A janela pede cerca de 1495x1006 e a interface desconta 90px da altura
+    // da tela ao se posicionar; abaixo de 1096 de altura o rodape seria cortado.
+    "VNC_RESOLUTION": "1680x1120x16"
+  },
+
+  "forwardPorts": [6080],
+  "portsAttributes": {
+    "6080": {
+      "label": "Interface do FarmTech",
+      "onAutoForward": "openBrowser"
+    }
+  },
+
+  "onCreateCommand": "bash .devcontainer/instalar.sh",
+  "postAttachCommand": "bash .devcontainer/abrir-interface.sh",
+
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python"]
+    }
+  },
+
+  "remoteUser": "vscode"
+}

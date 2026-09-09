@@ -13,6 +13,10 @@ python python/interface.py    # interface visual
 python python/farmtech.py     # menu de terminal (inalterado)
 ```
 
+Sem instalar nada, a interface também roda no navegador pelo GitHub Codespaces: o
+`README.md` traz o botão e o passo a passo, e o ambiente está descrito em
+`.devcontainer/`.
+
 Só a biblioteca padrão é usada. O Tkinter já vem com o Python no Windows, então não há
 nada para instalar.
 

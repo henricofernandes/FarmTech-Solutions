@@ -18,6 +18,33 @@ cabeçalho:
 
 ![Interface com o clima no cabeçalho](docs/imagens/interface.png)
 
+## Rodar no navegador, sem instalar nada
+
+Dá para executar o projeto inteiro pelo GitHub Codespaces, sem baixar o repositório e
+sem instalar Python nem R na máquina:
+
+[![Abrir no GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/henricofernandes/FarmTech-Solutions)
+
+1. Clique no botão acima e confirme em **Create codespace**.
+2. Espere o ambiente montar. Na primeira vez leva alguns minutos, porque é aí que o R e
+   o `jsonlite` são instalados.
+3. Quando a aba **Ports** mostrar a porta `6080`, abra ela no navegador.
+4. Clique em **Connect** e use a senha `farmtech`.
+
+A janela do FarmTech abre sozinha nesse desktop remoto, já com as análises em R
+funcionando. Se você fechar a janela e quiser abrir de novo, rode no terminal do
+Codespaces:
+
+```bash
+DISPLAY=:1 python3 python/interface.py
+```
+
+Para usar o menu de terminal em vez da janela, `python3 python/farmtech.py` funciona
+normalmente no terminal do Codespaces.
+
+É preciso ter conta no GitHub, e o tempo de uso sai da cota gratuita mensal de Codespaces
+de quem abrir. Toda a configuração desse ambiente está em `.devcontainer/`.
+
 ## Integrantes do grupo
 
 | Nome | RM |
@@ -32,6 +59,7 @@ cabeçalho:
 
 ```
 FarmTech-Solutions/
+├── .devcontainer/                   ambiente do Codespaces (Python, Tkinter, R e desktop)
 ├── python/farmtech.py               aplicação principal (menu, vetores, cálculos, CSV)
 ├── python/interface.py              interface visual em Tkinter sobre a mesma lógica
 ├── r/estatisticas.R                 média e desvio padrão a partir do CSV

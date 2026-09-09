@@ -1,0 +1,4 @@
+# Os scripts do Codespaces rodam no bash do Linux, que trata o \r do CRLF
+# como parte do comando e falha. Aqui o fim de linha fica travado em LF,
+# independente da configuracao de quem clonar o repositorio no Windows.
+*.sh text eol=lf
