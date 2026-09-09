@@ -60,6 +60,7 @@ de quem abrir. Toda a configuração desse ambiente está em `.devcontainer/`.
 ```
 FarmTech-Solutions/
 ├── .devcontainer/                   ambiente do Codespaces (Python, Tkinter, R e desktop)
+├── deploy/huggingface/              contêiner que publica a interface como link público
 ├── python/farmtech.py               aplicação principal (menu, vetores, cálculos, CSV)
 ├── python/interface.py              interface visual em Tkinter sobre a mesma lógica
 ├── r/estatisticas.R                 média e desvio padrão a partir do CSV
